@@ -24,7 +24,7 @@ const Form = ({addNewMember}) => {
     };
     console.log(member)
     return (
-        <form>
+        <form onSubmit={submitForm}>
             <label htmlFor="name">Name</label>
             <input
             id="name"
@@ -52,6 +52,7 @@ const Form = ({addNewMember}) => {
             value={member.role}
             onChange={handleChange}
             />
+            <button type="submit">Add member</button>
         </form>
     )
 }

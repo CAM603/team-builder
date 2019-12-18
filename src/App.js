@@ -8,8 +8,8 @@ function App() {
   const [team, setTeam] = useState([
     {
       id: 1,
-      name: 'Cameron',
-      email: 'noemail@email',
+      name: 'Cameron Hawley',
+      email: 'cameronhawley@comcast.net',
       role: 'Student'
     }
   ]);
@@ -31,7 +31,13 @@ function App() {
       addNewMember={addNewMember}
       />
       <h1>My Team</h1>
-      <p>{team[0].name}</p>
+      {team.map(member => (
+        <div key={member.id}>
+          <h2>Name: {member.name}</h2>
+          <h3>Email: {member.email}</h3>
+          <h3>Role: {member.role}</h3>
+        </div>
+      ))}
     </div>
   );
 }
