@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Form = ({addNewMember}) => {
+const Form = ({addNewMember, memberToEdit}) => {
     
+    useEffect(() => {
+        setMember(memberToEdit)
+    }, [memberToEdit])
 
     const [member, setMember] = useState({
+        id: null,
         name: '',
         email: '',
         role: ''
     })
 
+    
     const handleChange = event => {
         setMember({
             ...member,
@@ -16,13 +21,14 @@ const Form = ({addNewMember}) => {
         });
         console.log(event.target.value)
     }
-
+    
     const submitForm = event => {
         event.preventDefault();
+        if (!member.name || !member.email) return
         addNewMember(member);
         setMember({name: '', email: '', role: ''});
     };
-    console.log(member)
+    
     return (
         <form onSubmit={submitForm}>
             <label htmlFor="name">Name</label>
