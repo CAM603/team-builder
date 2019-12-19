@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const Form = ({addNewMember, memberToEdit}) => {
+const Form = ({addNewMember}) => {
     
     useEffect(() => {
-        setMember(memberToEdit)
-    }, [memberToEdit])
+        
+    }, [])
 
     const [member, setMember] = useState({
         id: null,
