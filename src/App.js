@@ -59,14 +59,12 @@ function App() {
           </div>
         ) : (
           <div>
-            <h2>Hi</h2>
+            <Form
+            addNewMember={addNewMember}
+            />
           </div>
         )}
       </div>
-      <Form
-      addNewMember={addNewMember}
-      
-      />
       <h1>My Team</h1>
       {team.map(person => (
         <div key={person.id}>
