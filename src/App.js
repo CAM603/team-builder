@@ -4,7 +4,6 @@ import MyForm from './Form';
 // Styles
 import './App.css';
 import styled from 'styled-components';
-import ButtonContainer from './EditUserForm';
 import { Card, Button, CardHeader, CardFooter, CardBody,
   CardTitle, CardText } from 'reactstrap';
 
@@ -62,9 +61,12 @@ function App() {
   justify-content: space-around;
   align-items: space-around;
   `;
+  const Title = styled.h1`
+  font-size: 3rem;
+  `;
   return (
     <div className="App">
-      <h1>Cam's Coders</h1>
+      <Title>Cam's Coders</Title>
       <div>
         {editing ? (
           <Container>
