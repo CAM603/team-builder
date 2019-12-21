@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import styled from 'styled-components';
 
-const Form = ({addNewMember}) => {
+const MyForm = ({addNewMember}) => {
     
     useEffect(() => {
         
@@ -28,39 +30,53 @@ const Form = ({addNewMember}) => {
         addNewMember(member);
         setMember({name: '', email: '', role: ''});
     };
-    
+
+    const FormContainer = styled.div`
+    width: 300px;
+    `;
+
     return (
-        <form onSubmit={submitForm}>
-            <label htmlFor="name">Name</label>
-            <input
-            id="name"
-            placeholder="name"
-            name="name"
-            type="text"
-            value={member.name}
-            onChange={handleChange}
-            />
-            <label htmlFor="email">Email</label>
-            <input
-            id="email"
-            placeholder="email"
-            name="email"
-            type="text"
-            value={member.email}
-            onChange={handleChange}
-            />
-            <label htmlFor="role">Role</label>
-            <input
-            id="role"
-            placeholder="role"
-            name="role"
-            type="text"
-            value={member.role}
-            onChange={handleChange}
-            />
-            <button type="submit">Add member</button>
-        </form>
+
+        <FormContainer>
+            <Form onSubmit={submitForm}>
+                <h2>Add</h2>
+                <FormGroup>
+                    <Label htmlFor="name">Name</Label>
+                    <Input
+                    id="name"
+                    placeholder="name"
+                    name="name"
+                    type="text"
+                    value={member.name}
+                    onChange={handleChange}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                    id="email"
+                    placeholder="email"
+                    name="email"
+                    type="text"
+                    value={member.email}
+                    onChange={handleChange}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="role">Role</Label>
+                    <Input
+                    id="role"
+                    placeholder="role"
+                    name="role"
+                    type="text"
+                    value={member.role}
+                    onChange={handleChange}
+                    />
+                </FormGroup>
+                <Button color="success" type="submit">Add member</Button>
+            </Form>
+        </FormContainer>
     )
 }
 
-export default Form;
+export default MyForm;
