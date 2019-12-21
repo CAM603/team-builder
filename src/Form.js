@@ -33,6 +33,7 @@ const MyForm = ({addNewMember}) => {
 
     const FormContainer = styled.div`
     width: 300px;
+    
     `;
 
     return (
